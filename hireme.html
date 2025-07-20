@@ -34,6 +34,7 @@
             max-width: 600px;
             color: #ccc;
             margin-bottom: 30px;
+            line-height: 1.6;
         }
 
         .hire-button {
@@ -53,9 +54,21 @@
             transform: scale(1.05);
         }
 
+        /* ✅ Mobile Responsive - only affects small screens */
         @media (max-width: 600px) {
+            .hire-me-section {
+                padding: 60px 15px;
+            }
+
             .hire-me-section h2 {
-                font-size: 26px;
+                font-size: 24px;
+                margin-bottom: 16px;
+            }
+
+            .hire-me-section p {
+                font-size: 16px;
+                padding: 0 10px;
+                margin-bottom: 25px;
             }
 
             .hire-button {
@@ -70,10 +83,14 @@
 
     <section class="hire-me-section" id="hireme">
         <h2>Let’s Work Together!</h2>
-        <p>I’m a front-end developer with experience in HTML, CSS, JavaScript, and React. I'm passionate about building
-            modern, responsive, and fast websites. If you're looking for someone who’s eager to learn and build
-            AI-integrated solutions—let's connect!</p>
-        <a href="contactme.html"><button class="hire-button">Hire Me</button></a>
+        <p>
+            I’m a front-end developer with experience in HTML, CSS, JavaScript, and React. I'm passionate about
+            building modern, responsive, and fast websites. If you're looking for someone who’s eager to learn and
+            build AI-integrated solutions—let's connect!
+        </p>
+        <a href="contactme.html">
+            <button class="hire-button">Hire Me</button>
+        </a>
     </section>
 
 </body>

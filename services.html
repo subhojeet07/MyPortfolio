@@ -19,6 +19,7 @@
             background-color: #0d0d0d;
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
             padding: 15px 40px;
             gap: 40px;
             box-shadow: 0 2px 5px rgba(255, 111, 60, 0.1);
@@ -27,7 +28,6 @@
         .navbar a {
             color: #ccc;
             text-decoration: none;
-            /* font-size: 18px; */
             transition: color 0.3s ease;
         }
 
@@ -69,6 +69,7 @@
         .service-card h3 {
             color: orange;
             margin-bottom: 10px;
+            font-size: 20px;
         }
 
         .service-card:hover {
@@ -79,10 +80,23 @@
             .navbar {
                 flex-direction: column;
                 align-items: center;
+                gap: 15px;
             }
 
-            .navbar a {
-                margin: 10px 0;
+            #services h2 {
+                font-size: 26px;
+            }
+
+            .service-card {
+                padding: 20px;
+            }
+
+            .service-card h3 {
+                font-size: 18px;
+            }
+
+            .service-card p {
+                font-size: 14px;
             }
         }
     </style>
