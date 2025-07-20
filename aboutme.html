@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Me - Front-End Developer</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0e0e0e;
+      /* Dark background */
+      color: #f5f5f5;
+      /* Light text */
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: #1a1a1a;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .navbar a {
+      color: #ccc;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #ff9800;
+    }
+
+    .navbar a.active {
+      color: #ff9800;
+    }
+
+    .about-container {
+      max-width: 900px;
+      margin: 50px auto;
+      background: #1c1c1c;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    }
+
+    .about-container h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #ff9800;
+      border-left: 5px solid #ff9800;
+      padding-left: 15px;
+    }
+
+    .about-text {
+      font-size: 17px;
+      line-height: 1.7;
+      margin-bottom: 30px;
+      color: #ddd;
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 15px;
+    }
+
+    .skill-item {
+      background: #2a2a2a;
+      padding: 15px 20px;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: transform 0.3s ease, background 0.3s;
+      color: #f0f0f0;
+    }
+
+    .skill-item:hover {
+      transform: scale(1.05);
+      background: #444;
+    }
+
+    .goal {
+      margin-top: 40px;
+      padding: 20px;
+      background: #2a2a2a;
+      border-left: 5px solid #ffb300;
+      border-radius: 8px;
+      color: #eee;
+    }
+
+    @media (max-width: 600px) {
+      .navbar {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px 20px;
+      }
+
+      .about-container {
+        padding: 25px;
+        margin: 20px;
+      }
+
+      .about-container h2 {
+        font-size: 26px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="portfolio1.html">Home</a>
+    <a href="about.html" class="active">About me</a>
+    <a href="project.html">Projects</a>
+    <a href="services.html">Services</a>
+    <a href="contactme.html">Contact me</a>
+  </nav>
+
+  <!-- About Me Section -->
+  <div class="about-container">
+    <h2>🧑‍💻 About Me</h2>
+    <p class="about-text">
+      Hello! I'm <strong>Subhojeet Manna</strong>, a passionate <strong>Front-End Developer</strong> who enjoys creating
+      clean, fast, and accessible web experiences. I specialize in HTML, CSS, JavaScript, and modern frameworks like
+      React and Tailwind CSS. I love to bring ideas to life in the browser and stay up-to-date with the latest trends in
+      web development.
+    </p>
+
+    <h2>💡 Skills</h2>
+    <div class="skills">
+      <div class="skill-item"><i class="fab fa-html5"></i> HTML5</div>
+      <div class="skill-item"><i class="fab fa-css3-alt"></i> CSS3</div>
+      <div class="skill-item"><i class="fab fa-js"></i> JavaScript</div>
+      <div class="skill-item"><i class="fab fa-react"></i> React</div>
+      <div class="skill-item"><i class="fab fa-git-alt"></i> Git & GitHub</div>
+    </div>
+
+    <div class="goal">
+      <strong>🎯 Goal:</strong> To work with creative teams and build seamless, user-friendly digital products that make
+      an impact.
+    </div>
+  </div>
+
+</body>
+
+</html>

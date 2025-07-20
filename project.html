@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio - Stopwatch Project</title>
+    <style>
+        /* * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; */
+        /* }  */
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #111;
+            color: #fff;
+            margin: 0;
+
+
+        }
+
+        nav {
+            background-color: #0d0d0d;
+            display: flex;
+            justify-content: center;
+            padding: 15px 40px;
+            gap: 40px;
+            box-shadow: 0 2px 5px rgba(255, 111, 60, 0.1);
+        }
+
+        nav a {
+            color: #ccc;
+            text-decoration: none;
+            /* font-size: 18px; */
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: orange;
+        }
+
+        nav a.active {
+            color: orange;
+            /* font-weight: bold; */
+        }
+
+        .section-heading {
+            font-size: 24px;
+            margin: 30px 50px 10px;
+            color: orange;
+            border-left: 5px solid orange;
+            padding-left: 10px;
+        }
+
+        #project-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        #main-container {
+            background-color: #1e1e1e;
+            border-radius: 12px;
+            box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+            padding: 30px 20px;
+            width: 320px;
+            text-align: center;
+        }
+
+        #main-container h2 {
+            font-size: 20px;
+            color: #fff;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #444;
+            padding-bottom: 10px;
+        }
+
+        #result {
+            font-size: 38px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .btn {
+            width: 90px;
+            height: 40px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            transition: 0.2s;
+        }
+
+        #start-button {
+            background-color: #28a745;
+        }
+
+        #stop-button {
+            background-color: #dc3545;
+        }
+
+        #reset-button {
+            background-color: #007bff;
+        }
+
+        .btn:hover {
+            opacity: 0.85;
+            cursor: pointer;
+        }
+
+        #switch {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="portfolio1.html">Home</a>
+        <a href="aboutme.html">About me</a>
+        <a class="active" href="project.html">Projects</a>
+        <a href="services.html">Services</a>
+        <a href="contactme.html">Contact me</a>
+    </nav>
+
+    <!-- Projects Section -->
+    <div class="section-heading">My Projects</div>
+
+    <!-- Stopwatch Project -->
+    <div id="project-container">
+        <div id="main-container">
+            <h2>My First Project: Stopwatch</h2>
+            <div id="result">00:00:000</div>
+            <div id="switch">
+                <button class="btn" id="start-button">Start</button>
+                <button class="btn" id="stop-button">Stop</button>
+                <button class="btn" id="reset-button">Reset</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        const result = document.getElementById("result");
+        const startButton = document.getElementById("start-button");
+        const stopButton = document.getElementById("stop-button");
+        const resetButton = document.getElementById("reset-button");
+
+        let startTime = 0;
+        let elapsedTime = 0;
+        let running = false;
+        let interval;
+
+        function pad(n) {
+            return n.toString().padStart(2, "0");
+        }
+
+        function padMilli(n) {
+            return n.toString().padStart(3, "0");
+        }
+
+        function updateDisplay(time) {
+            const milliseconds = time % 1000;
+            const seconds = Math.floor(time / 1000) % 60;
+            const minutes = Math.floor(time / 60000);
+            result.textContent = `${pad(minutes)}:${pad(seconds)}:${padMilli(milliseconds)}`;
+        }
+
+        startButton.addEventListener("click", () => {
+            if (!running) {
+                running = true;
+                startTime = Date.now() - elapsedTime;
+
+                interval = setInterval(() => {
+                    elapsedTime = Date.now() - startTime;
+                    updateDisplay(elapsedTime);
+                }, 15);
+            }
+        });
+
+        stopButton.addEventListener("click", () => {
+            if (running) {
+                running = false;
+                clearInterval(interval);
+            }
+        });
+
+        resetButton.addEventListener("click", () => {
+            running = false;
+            clearInterval(interval);
+            elapsedTime = 0;
+            updateDisplay(0);
+        });
+    </script>
+
+</body>
+
+</html>
